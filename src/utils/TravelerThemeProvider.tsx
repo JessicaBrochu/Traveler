@@ -7,6 +7,7 @@ const TravelerThemeProvider = ({
   children: React.ReactElement
 }) => {
   const theme = createTheme()
+  console.log( theme)
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }

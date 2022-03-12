@@ -5,18 +5,15 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom'
+import Home from './pages/Home'
 import TravelerThemeProvider from './utils/TravelerThemeProvider'
-
-const MyPage = () => {
-  return <div>Hello</div>
-}
 
 function App() {
   return (
     <TravelerThemeProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<MyPage />} />
+          <Route path="/" element={<Home />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
