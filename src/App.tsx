@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
   Navigate,
 } from 'react-router-dom'
+import TravelerThemeProvider from './utils/TravelerThemeProvider'
 
 const MyPage = () => {
   return <div>Hello</div>
@@ -13,12 +13,14 @@ const MyPage = () => {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MyPage />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
+    <TravelerThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MyPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Router>
+    </TravelerThemeProvider>
   )
 }
 
