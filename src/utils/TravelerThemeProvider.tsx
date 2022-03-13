@@ -6,7 +6,11 @@ const TravelerThemeProvider = ({
 }: {
   children: React.ReactElement
 }) => {
-  const theme = createTheme()
+  const theme = createTheme({
+    typography: {
+      fontFamily: `"Inter", "Roboto", "Helvetica", "Arial", sans-serif`
+    }
+  })
   console.log( theme)
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
