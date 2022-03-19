@@ -1,5 +1,7 @@
-import { Box, styled, Typography } from '@mui/material'
-import * as React from 'react'
+import Typography from '@mui/material/Typography'
+import styled from '@mui/material/styles/styled'
+import Box from '@mui/material/Box'
+import React from 'react'
 
 const Hero = () => {
   return (

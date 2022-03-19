@@ -4,8 +4,8 @@ export const db = [
     title: 'Stunning apartment with a large pool',
     label: 'Costa Rica',
     description: 'Entire Apartment • 3 guests • 2 beds',
-    countryId: 0,
-    id: 0,
+    countryId: 9,
+    id: 9,
   },
   {
     image: 'italy-apartment.jpg',

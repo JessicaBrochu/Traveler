@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider } from '@mui/material'
-import * as React from 'react'
+import React from 'react'
 
 const TravelerThemeProvider = ({
   children,
@@ -9,15 +9,15 @@ const TravelerThemeProvider = ({
   const theme = createTheme({
     /*breakpoints: {
       values: {
-md: 900
-xl: 1536
+        md: 900
+        xl: 1536
       }
     },*/
     typography: {
-      fontFamily: `"Inter", "Roboto", "Helvetica", "Arial", sans-serif`
-    }
+      fontFamily: `"Inter", "Roboto", "Helvetica", "Arial", sans-serif`,
+    },
   })
-  console.log( theme)
+  console.log(theme)
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }

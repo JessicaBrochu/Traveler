@@ -11,18 +11,50 @@ export type House = {
   countryId: number
   id: number
 }
-
-export const Inputs = ({countryId}: {countryId: (id?:number) => void}) => {
-
+export const Inputs = ({
+  setFieldValue,
+  setFieldTouched,
+  error,
+  touched,
+  helperText,
+}: {
+  setFieldValue: (
+    field: string,
+    value: any,
+    shouldValidate?: boolean | undefined
+  ) => void
+  setFieldTouched: (
+    field: string,
+    isTouched?: boolean | undefined,
+    shouldValidate?: boolean | undefined
+  ) => void
+  error: boolean
+  touched: boolean
+  helperText?: string
+}) => {
   return (
-    <Autocomplete
-      disablePortal
-      id="combo-box-demo"
-      options={db}
-      sx={{ width: 300 }}
-      onChange={(e, newValue) => countryId(newValue?.countryId)}
-      renderInput={(params) => <TextField {...params} label="Destination" />}
-    />
+    <>
+      <Autocomplete
+        disablePortal
+        id="combo-box-demo"
+        options={db}
+        sx={{ width: 300 }}
+        size="small"
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            error={error && touched}
+            helperText={helperText}
+            label="Destination"
+          />
+        )}
+        onChange={(e, value) => {
+          setFieldTouched('countryId', true, true)
+          setFieldValue('countryId', value?.countryId || null)
+        }}
+        onBlur={() => setFieldTouched('countryId', true, true)}
+      />
+    </>
   )
 }
 

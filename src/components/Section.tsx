@@ -1,7 +1,6 @@
-import * as React from 'react'
-import { FC, ReactElement } from 'react'
+import React, { FC, ReactElement } from 'react'
 import Paper from '@mui/material/Paper'
-import { styled } from '@mui/material/styles'
+import styled from '@mui/material/styles/styled'
 
 type SectionProps = {
   children?: ReactElement
