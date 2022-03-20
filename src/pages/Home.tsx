@@ -9,10 +9,7 @@ import Box from '@mui/material/Box'
 import LoadingButton from '@mui/lab/LoadingButton'
 import styled from '@mui/material/styles/styled'
 import { db } from '../../data'
-
-const SearchCountrySchema = Yup.object().shape({
-  countryId: Yup.number().typeError('Select a country'),
-})
+import CountryCard from '../components/CountryCard'
 
 const Home = () => {
   const [data, setData] = useState(db)
@@ -26,10 +23,9 @@ const Home = () => {
       countryId: number
       id: number
     }[] = []
-
-    db.map((item, index) => {
+    if (!countryId) return setData(db)
+    db.map((item) => {
       if (item.countryId === countryId) {
-        console.log(index, item)
         newData.push(item)
       }
     })
@@ -43,7 +39,6 @@ const Home = () => {
         <Box>
           <Formik
             initialValues={{ countryId: null } as { countryId: number | null }}
-            validationSchema={SearchCountrySchema}
             onSubmit={({ countryId }, { setSubmitting }) => {
               // simulate sending data
               setTimeout(() => {
@@ -95,6 +90,7 @@ const Home = () => {
               )
             }}
           </Formik>
+          <CountryCard data={data} />
         </Box>
       </Section>
     </>
@@ -107,4 +103,5 @@ const SearchForm = styled('form')({
   display: 'flex',
   justifyContent: 'space-between',
   padding: '30px',
+  gap: '10px'
 })

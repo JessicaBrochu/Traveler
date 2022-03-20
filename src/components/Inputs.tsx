@@ -1,3 +1,4 @@
+import styled from '@mui/material/styles/styled'
 import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
 import * as React from 'react'
@@ -51,6 +52,7 @@ export const Inputs = ({
             error={error && touched}
             helperText={helperText}
             label="Destination"
+            sx={{marginInlineEnd: '15px'}}
           />
         )}
         onChange={(e, value) => {

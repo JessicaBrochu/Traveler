@@ -42,5 +42,11 @@ const HeroTitle = styled(Typography)({
   color: "#FFF",
   width: "100%",
   textAlign: "center",
-  fontWeight: "900"
+  fontWeight: "900",
+  ['@media (max-width:1150px)']: {
+    fontSize: '70px'
+  },
+  ['@media (max-width:864px)']: {
+    fontSize: '50px'
+  }
 })

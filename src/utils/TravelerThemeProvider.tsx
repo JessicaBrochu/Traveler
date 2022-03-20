@@ -17,7 +17,6 @@ const TravelerThemeProvider = ({
       fontFamily: `"Inter", "Roboto", "Helvetica", "Arial", sans-serif`,
     },
   })
-  console.log(theme)
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
