@@ -34,19 +34,19 @@ const HeroSection = styled(Box)({
 
 const HeroTitle = styled(Typography)({
   position: 'absolute',
-  zIndex: "10",
+  zIndex: '10',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  fontSize: "90px",
-  color: "#FFF",
-  width: "100%",
-  textAlign: "center",
-  fontWeight: "900",
+  fontSize: '90px',
+  color: '#FFF',
+  width: '100%',
+  textAlign: 'center',
+  fontWeight: '900',
   ['@media (max-width:1150px)']: {
-    fontSize: '70px'
+    fontSize: '70px',
   },
   ['@media (max-width:864px)']: {
-    fontSize: '50px'
-  }
+    fontSize: '50px',
+  },
 })

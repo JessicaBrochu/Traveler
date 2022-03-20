@@ -16,10 +16,10 @@ const SectionContainer = styled(Paper)({
   maxWidth: '1440px',
   width: '100%',
   minHeight: '550px',
-  marginTop: "-100px",
+  marginTop: '-100px',
   zIndex: '10',
   position: 'relative',
   transform: 'translateX(-50%)',
   left: '50%',
-  borderRadius: '20px'
+  borderRadius: '20px',
 })

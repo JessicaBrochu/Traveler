@@ -1,4 +1,3 @@
-import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
@@ -65,6 +64,6 @@ const CountryItem = styled(Paper)({
   maxWidth: '440px',
   width: '100%',
   ['@media (max-width:1150px)']: {
-    maxWidth: 'none'
-  }
+    maxWidth: 'none',
+  },
 })

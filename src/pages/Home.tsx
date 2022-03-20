@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Hero from '../components/Hero'
 import Inputs from '../components/Inputs'
 import Section from '../components/Section'
-import * as Yup from 'yup'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import LoadingButton from '@mui/lab/LoadingButton'
@@ -103,5 +102,5 @@ const SearchForm = styled('form')({
   display: 'flex',
   justifyContent: 'space-between',
   padding: '30px',
-  gap: '10px'
+  gap: '10px',
 })
