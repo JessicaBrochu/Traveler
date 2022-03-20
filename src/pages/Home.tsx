@@ -1,5 +1,5 @@
 import { Formik } from 'formik'
-import React from 'react'
+import React, { useState } from 'react'
 import Hero from '../components/Hero'
 import Inputs from '../components/Inputs'
 import Section from '../components/Section'
@@ -8,15 +8,33 @@ import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import LoadingButton from '@mui/lab/LoadingButton'
 import styled from '@mui/material/styles/styled'
+import { db } from '../../data'
+
+const SearchCountrySchema = Yup.object().shape({
+  countryId: Yup.number().typeError('Select a country'),
+})
 
 const Home = () => {
-  const submitCountry = (countryId: number | null) => {
-    return console.log(countryId)
-  }
+  const [data, setData] = useState(db)
 
-  const SearchCountrySchema = Yup.object().shape({
-    countryId: Yup.number().typeError('Select a country'),
-  })
+  const submitCountry = (countryId: number | null) => {
+    let newData: {
+      image: string
+      title: string
+      label: string
+      description: string
+      countryId: number
+      id: number
+    }[] = []
+
+    db.map((item, index) => {
+      if (item.countryId === countryId) {
+        console.log(index, item)
+        newData.push(item)
+      }
+    })
+    setData(newData)
+  }
 
   return (
     <>
@@ -27,8 +45,9 @@ const Home = () => {
             initialValues={{ countryId: null } as { countryId: number | null }}
             validationSchema={SearchCountrySchema}
             onSubmit={({ countryId }, { setSubmitting }) => {
-              submitCountry(countryId)
+              // simulate sending data
               setTimeout(() => {
+                submitCountry(countryId)
                 setSubmitting(false)
               }, 1000)
             }}
@@ -69,7 +88,7 @@ const Home = () => {
                       size="large"
                       sx={{ alignSelf: 'flex-start', height: '40px' }}
                     >
-                      Submit
+                      Search
                     </LoadingButton>
                   )}
                 </SearchForm>

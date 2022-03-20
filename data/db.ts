@@ -8,6 +8,14 @@ export const db = [
     id: 9,
   },
   {
+    image: 'finland-cabin.jpg',
+    title: 'Comfy cabin in the woods',
+    label: 'Finland',
+    description: 'Entire House • 2 guests • 2 beds',
+    countryId: 3,
+    id: 10,
+  },
+  {
     image: 'italy-apartment.jpg',
     title: 'Large luxurious Italian mansion',
     label: 'Italy',
@@ -30,14 +38,6 @@ export const db = [
     description: 'Entire House • 4 guests • 4 beds',
     countryId: 3,
     id: 3,
-  },
-  {
-    image: 'mexico-house.jpg',
-    title: 'Large modern house with a pool',
-    label: 'Mexico',
-    description: 'Entire House • 3 guests • 2 beds',
-    countryId: 4,
-    id: 4,
   },
   {
     image: 'brazil-house.jpg',

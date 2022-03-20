@@ -32,12 +32,17 @@ export const Inputs = ({
   touched: boolean
   helperText?: string
 }) => {
+  const data = db.filter(
+    (value, index, self) =>
+      index === self.findIndex((t) => t.countryId === value.countryId)
+  )
+
   return (
     <>
       <Autocomplete
         disablePortal
         id="combo-box-demo"
-        options={db}
+        options={data!}
         sx={{ width: 300 }}
         size="small"
         renderInput={(params) => (
