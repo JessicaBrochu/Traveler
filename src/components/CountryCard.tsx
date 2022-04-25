@@ -14,7 +14,7 @@ const CountryCard = ({ data }: { data: House[] }) => {
           <CardMedia
             component="img"
             height="300"
-            image={`src/assets/${image}`}
+            image={`/assets/${image}`}
             alt={title}
             sx={{
               borderRadius: '8px',
