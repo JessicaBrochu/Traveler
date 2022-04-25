@@ -14,7 +14,7 @@ const Hero = () => {
 export default Hero
 
 const HeroSection = styled(Box)({
-  backgroundImage: `url("src/assets/mountains-lake.jpg")`,
+  backgroundImage: `url("/assets/mountains-lake.jpg")`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
